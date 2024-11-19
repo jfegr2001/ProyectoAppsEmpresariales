@@ -1,33 +1,25 @@
 package com.demo.proyecto.domain.dto;
 
 public class VacunaDTO {
-    private String id;
+    private Long id;
     private String nombre;
     private String dosis;
     private String descripcion;
 
-    public VacunaDTO(String id, String descripcion, String dosis, String nombre) {
-        this.id = id;
+
+    public VacunaDTO(String descripcion, String dosis, Long id, String nombre) {
         this.descripcion = descripcion;
         this.dosis = dosis;
-        this.nombre = nombre;
-    }
-
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
         this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public String getDosis() {
@@ -38,12 +30,21 @@ public class VacunaDTO {
         this.dosis = dosis;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public Long getId() {
+        return id;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }
+
 

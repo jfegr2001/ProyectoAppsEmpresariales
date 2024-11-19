@@ -9,7 +9,8 @@ import java.util.List;
 public class Mascota {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     private String nombre;
     private String tipo;
@@ -26,14 +27,18 @@ public class Mascota {
     @OneToMany(mappedBy = "mascota", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<HistorialVacunas> historialVacunas;
 
+    public Mascota() {
+    }
+
+
     // Getters y Setters
 
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

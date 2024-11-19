@@ -1,41 +1,42 @@
 package com.demo.proyecto.domain.dto;
 
 public class HistorialVacunasDTO {
-    private String id;
-    private String idMascota;         // ID de la mascota
-    private String idVacuna;          // ID de la vacuna
+    private long id;
+    private long idMascota;         // ID de la mascota
+    private long idVacuna;          // ID de la vacuna
     private String fechaAplicacion;   // Fecha de aplicación (ej. "yyyy-MM-dd")
     private String observaciones;
 
-    public HistorialVacunasDTO(String id, String idMascota, String fechaAplicacion, String idVacuna, String observaciones) {
+
+    public HistorialVacunasDTO(long id, long idMascota, long idVacuna, String fechaAplicacion, String observaciones) {
         this.id = id;
         this.idMascota = idMascota;
-        this.fechaAplicacion = fechaAplicacion;
         this.idVacuna = idVacuna;
+        this.fechaAplicacion = fechaAplicacion;
         this.observaciones = observaciones;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getIdMascota() {
+    public long getIdMascota() {
         return idMascota;
     }
 
-    public void setIdMascota(String idMascota) {
+    public void setIdMascota(long idMascota) {
         this.idMascota = idMascota;
     }
 
-    public String getIdVacuna() {
+    public long getIdVacuna() {
         return idVacuna;
     }
 
-    public void setIdVacuna(String idVacuna) {
+    public void setIdVacuna(long idVacuna) {
         this.idVacuna = idVacuna;
     }
 

@@ -1,29 +1,43 @@
 package com.demo.proyecto.persistence.entity;
 
 import jakarta.persistence.*;
+
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "propietarios")
 public class Propietario {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     private String nombre;
     private String telefono;
     private String direccion;
     private String email;
+    private String nombreUsuario;
+    private String password;
+    private String perfil;
+
+
+    @OneToMany (cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy ="propietario")
+    private Set<UsuarioRol> usuarioRoles = new HashSet<>();
 
     // Relación uno a muchos con Mascota
     @OneToMany(mappedBy = "propietario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Mascota> mascotas;
 
-    public String getId() {
+    public Propietario() {
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -67,5 +81,35 @@ public class Propietario {
         this.mascotas = mascotas;
     }
 
-    // Getters y Setters
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
+
+    public Set<UsuarioRol> getUsuarioRoles() {
+        return usuarioRoles;
+    }
+
+    public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
+        this.usuarioRoles = usuarioRoles;
+    }
 }

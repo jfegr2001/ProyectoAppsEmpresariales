@@ -1,34 +1,25 @@
 package com.demo.proyecto.domain.dto;
 
 public class MascotaDTO {
-    private String id;
+    private long id;
     private String nombre;
-    private String tipo;
-    private String fechaNacimiento; // Formato de fecha como String (ej. "yyyy-MM-dd")
-    private String idPropietario;   // ID del propietario
+    private String tipoMascota;
+    private long idPropietario;   // ID del propietario
 
-    public MascotaDTO(String id, String nombre, String tipo, String fechaNacimiento, String idPropietario) {
+
+    public MascotaDTO(long id, String nombre, String tipoMascota, long idPropietario) {
         this.id = id;
         this.nombre = nombre;
-        this.tipo = tipo;
-        this.fechaNacimiento = fechaNacimiento;
+        this.tipoMascota = tipoMascota;
         this.idPropietario = idPropietario;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public String getNombre() {
@@ -39,19 +30,19 @@ public class MascotaDTO {
         this.nombre = nombre;
     }
 
-    public String getIdPropietario() {
+    public String getTipoMascota() {
+        return tipoMascota;
+    }
+
+    public void setTipoMascota(String tipoMascota) {
+        this.tipoMascota = tipoMascota;
+    }
+
+    public long getIdPropietario() {
         return idPropietario;
     }
 
-    public void setIdPropietario(String idPropietario) {
+    public void setIdPropietario(long idPropietario) {
         this.idPropietario = idPropietario;
-    }
-
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
     }
 }

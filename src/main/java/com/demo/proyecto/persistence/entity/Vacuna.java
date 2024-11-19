@@ -19,6 +19,9 @@ public class Vacuna {
     @OneToMany(mappedBy = "vacuna", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<HistorialVacunas> historialVacunas;
 
+    public Vacuna() {
+    }
+
     // Getters y Setters
 
 
