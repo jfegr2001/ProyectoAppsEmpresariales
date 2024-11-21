@@ -1,0 +1,46 @@
+<div class="container">
+    <header class="header">
+      <nav class="navbar">
+        <ul class="menu">
+          <li><a (click)="setView('list')">Lista Propietarios</a></li>
+          <li><a (click)="setView('register')">Registrar</a></li>
+          <li><a (click)="setView('delete')">Eliminar</a></li>
+          <li><a (click)="setView('edit')">Editar</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <main class="main">
+      <div *ngIf="currentView === 'list'">
+        <app-list-propietarios></app-list-propietarios>
+      </div>
+      <div *ngIf="currentView === 'register'">
+        <div class="table-container">
+          <h2>Registrar</h2>
+          <p>Aquí puedes registrar nuevos datos.</p>
+        </div>
+      </div>
+      <div *ngIf="currentView === 'delete'">
+        <div class="table-container">
+          <h2>Eliminar</h2>
+          <p>Selecciona un propietario para eliminar.</p>
+        </div>
+      </div>
+      <div *ngIf="currentView === 'edit'">
+        <div class="table-container">
+          <h2>Editar</h2>
+          <p>Edita la información de un propietario existente.</p>
+        </div>
+      </div>
+      <div *ngIf="currentView === 'default'">
+        <div class="table-container">
+          <h2>Bienvenido al sistema</h2>
+          <p>Selecciona una opción en el menú para continuar.</p>
+        </div>
+      </div>
+    </main>
+  
+    <footer class="footer">
+      <p>&copy; 2024 Sistema de Gestión</p>
+    </footer>
+  </div>
